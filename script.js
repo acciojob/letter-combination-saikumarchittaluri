@@ -1,6 +1,6 @@
 function letterCombinations(input) {
   //Complete the function
-	let table{
+	let table = {
 		"1" : "1"
 		"2" : "abc",
 		"3" : "def",
@@ -12,15 +12,17 @@ function letterCombinations(input) {
 		"9" : "wxyz",
 		"0" : "0"
 	}
-let Solution = [];
+		
+
+let Solution = [ ] ;
 function solve (currentIndex, calculatedString){
 	if(input.length <= currentIndex){
-		Solution.push(calculatedString);
+		solutions.push(calculatedString);
 		return;
 	}
 	let currentChar=input[currentIndex];
-	for(let i=0;i<table[currentChar].length;i++){
-		solve(currentIndex+1, calculatedString + table[currentChar])
+	for(let i = 0;i < table[currentChar].length;i++){
+		solve(currentIndex + 1, calculatedString + table[currentChar])
 	}
 }
 solve(0,"");
